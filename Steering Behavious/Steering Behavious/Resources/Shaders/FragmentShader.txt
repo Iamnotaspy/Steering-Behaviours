@@ -1,0 +1,17 @@
+#version 450 core
+
+in vec3 position;
+
+out vec4 color;
+
+void main(void)
+{
+	float R = 1.0;
+	float R2 = 0.5;
+	float dist = sqrt(dot(position, position));
+	//if(dist>= R||dist<=R2)
+	//{
+	//	discard;
+	//}
+	color = vec4(0.0, 1.0, 0.0, 1.0);
+}
