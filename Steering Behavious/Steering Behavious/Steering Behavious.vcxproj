@@ -70,12 +70,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(ProjectDir)/Dependencies/freeglut;$(ProjectDir)/Dependencies/soil;$(ProjectDir)/Dependencies/glm;$(ProjectDir)/Dependencies/vld;$(ProjectDir)/Dependencies/glew;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)/Dependencies/freeglut;$(ProjectDir)/Dependencies/glew;$(ProjectDir)/Dependencies/glm;$(ProjectDir)/Dependencies/soil;$(ProjectDir)/Dependencies/vld;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)/Dependencies/freeglut;$(ProjectDir)/Dependencies/soil;$(ProjectDir)/Dependencies/glm;$(ProjectDir)/Dependencies/vld;$(ProjectDir)/Dependencies/fmod;$(ProjectDir)/Dependencies/glew;$(ProjectDir)/Dependencies;$(ProjectDir)/Dependencies/freetype;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)/Dependencies/freetype;$(ProjectDir)/Dependencies/fmod;$(ProjectDir)/Dependencies;$(ProjectDir)/Dependencies/freeglut;$(ProjectDir)/Dependencies/glew;$(ProjectDir)/Dependencies/glm;$(ProjectDir)/Dependencies/soil;$(ProjectDir)/Dependencies/vld;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>$(ProjectDir)/Dependencies/freeglut;$(ProjectDir)/Dependencies/soil;$(ProjectDir)/Dependencies/glm;$(ProjectDir)/Dependencies/vld;$(ProjectDir)/Dependencies/glew;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)/Dependencies/freeglut;$(ProjectDir)/Dependencies/glew;$(ProjectDir)/Dependencies/glm;$(ProjectDir)/Dependencies/soil;$(ProjectDir)/Dependencies/vld;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)/Dependencies/freeglut;$(ProjectDir)/Dependencies/soil;$(ProjectDir)/Dependencies/glm;$(ProjectDir)/Dependencies/vld;$(ProjectDir)/Dependencies/fmod;$(ProjectDir)/Dependencies/glew;$(ProjectDir)/Dependencies;$(ProjectDir)/Dependencies/freetype;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)/Dependencies/freetype;$(ProjectDir)/Dependencies/fmod;$(ProjectDir)/Dependencies;$(ProjectDir)/Dependencies/freeglut;$(ProjectDir)/Dependencies/glew;$(ProjectDir)/Dependencies/glm;$(ProjectDir)/Dependencies/soil;$(ProjectDir)/Dependencies/vld;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -85,7 +85,7 @@
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>opengl32.lib;freeglut.lib;SOIL.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;fmod_vc.lib;freeglut.lib;freetype.lib;SOIL.lib;vld.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -108,7 +108,7 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>opengl32.lib;freeglut.lib;SOIL.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;fmod_vc.lib;freeglut.lib;freetype.lib;SOIL.lib;vld.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -126,20 +126,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="audioManager.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="gameManager.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="Object.h" />
     <ClInclude Include="ShaderLoader.h" />
+    <ClInclude Include="TextLabel.h" />
     <ClInclude Include="utility.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="audioManager.cpp" />
     <ClCompile Include="camera.cpp" />
     <ClCompile Include="gameManager.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Object.cpp" />
     <ClCompile Include="ShaderLoader.cpp" />
+    <ClCompile Include="TextLabel.cpp" />
     <ClCompile Include="utility.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Resources\Shaders\FragmentShader.txt" />
+    <Text Include="Resources\Shaders\textFS.txt" />
+    <Text Include="Resources\Shaders\textVS.txt" />
     <Text Include="Resources\Shaders\VertexShader.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

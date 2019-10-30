@@ -9,6 +9,7 @@ public:
 	camera();
 	~camera();
 	glm::vec3 GetPos();
+	void SetPos(float x, float y);
 	glm::vec3 GetLookDir();
 	glm::vec3 GetUpDir();
 	glm::mat4 GetprojView();

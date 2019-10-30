@@ -1,5 +1,8 @@
-﻿  gameManager.cpp
+﻿  camera.cpp
+  gameManager.cpp
   main.cpp
+  TextLabel.cpp
+  utility.cpp
   Generating Code...
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-  Steering Behavious.vcxproj -> H:\New folder\Year 2\GD2P01\Steering Behaviours\Steering Behavious\Debug\Steering Behavious.exe
+  Steering Behavious.vcxproj -> H:\New folder\Year 2\P04\Graphics-Summative\Steering-Behaviours\Steering Behavious\Debug\Steering Behavious.exe
